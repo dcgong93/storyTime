@@ -1,0 +1,13 @@
+#background-image{
+	min-height: 100%;
+	min-width: 1024px;
+
+	width: 100%;
+	height: auto;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: url(./../images/writing.jpg) center no-repeat fixed;
+	background-size: cover;
+}
