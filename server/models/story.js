@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var StorySchema = new mongoose.Schema({
     title: {type: String},
     genre: {type: String},
-    _snippet: [{type:Schema.Types.ObjectID, ref:'Snippetdb'}]
+    _snippet: [{type:mongoose.Types.ObjectId, ref:'Snippetdb'}]
 }, {timestamps: true});
 
 mongoose.model('Storydb', StorySchema);
