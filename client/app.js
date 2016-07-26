@@ -18,5 +18,8 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 				controller: 'dashboardController',
 				templateUrl: 'partials/dashboard.html'
 			})
+			.when('/profile', {
+				templateUrl:'partials/profile.html'
+			})
 	})
 }());
