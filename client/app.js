@@ -18,5 +18,9 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 				controller: 'dashboardController',
 				templateUrl: 'partials/dashboard.html'
 			})
+			.when('/new_story', {
+				controller: 'new_storyController',
+				templateUrl: 'partials/new_story.html'
+			})
 	})
 }());

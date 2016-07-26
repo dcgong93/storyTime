@@ -1,11 +1,13 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
 var StorySchema = new mongoose.Schema({
-    title: {type: String},
-    genre: {type: String},
-    _snippet: [{type:Schema.Types.ObjectID, ref:'Snippetdb'}]
+    title: String,
+    genre: String,
+    _snippets: [{type:Schema.Types.ObjectId, ref:'Snippetdb'}]
 }, {timestamps: true});
 
-mongoose.model('Storydb', StorySchema);
+mongoose.model('Story', StorySchema);
 // Validations
-StorySchema.path('title').required(true, 'Title cannot be blank');
-StorySchema.path('genre').required(true, 'Genre cannot be blank');
+// StorySchema.path('title').required(true, 'Title cannot be blank');
+// StorySchema.path('genre').required(true, 'Genre cannot be blank');

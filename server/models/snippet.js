@@ -1,10 +1,11 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
 var SnippetSchema = new mongoose.Schema({
-    _users: [{type:Schema.Types.ObjectID, ref:'Userdb'}],
-    _stories: [{type:Schema.Types.ObjectID, ref:'Storydb'}],
-    content: {type: String}
+    _stories: [{type: Schema.Types.ObjectId, ref:'Storydb'}],
+    content: String
 }, {timestamps: true});
 
 mongoose.model('Snippetdb', SnippetSchema);
 // Validations
-SnippetSchema.path('content').required(true, 'Content cannot be blank');
+// SnippetSchema.path('content').required(true, 'Content cannot be blank');
