@@ -20,6 +20,11 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 				templateUrl: 'partials/dashboard.html'
 			})
 
+			.when('/new_story', {
+				controller: 'new_storyController',
+				templateUrl: 'partials/new_story.html'
+			})
+
 			.when('/profile', {
 				templateUrl: 'partials/profile.html'
 			})
