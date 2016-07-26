@@ -14,5 +14,8 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 				controller: 'indexController',
 				templateUrl: "partials/index.html"
 			})
+			.when('/profile', {
+				templateUrl:'partials/profile.html'
+			})
 	})
 }());
