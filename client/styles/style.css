@@ -11,3 +11,49 @@
 	background: url(./../images/writing.jpg) center no-repeat fixed;
 	background-size: cover;
 }
+
+#logo{
+	/*width: 100px;*/
+	margin-left: 20px;
+	display: inline-block;
+}
+
+.navbar-brand{
+	font-family: 'Dancing Script';
+	font-size: 45px;
+	text-decoration: none !important;
+	color: white;
+}
+
+.navbar-brand:hover{
+	color: rgb(225,225,225);
+}
+
+.navbar{
+	background: rgba(231, 168, 60, 0.3);
+	color: white;
+}
+
+#navbar a{
+	font-size: 20px;
+	color: white;
+	text-decoration: none !important;
+}
+
+#magic{
+	color: black;
+	border-right: 1px solid #777;
+	padding-right: 7px;
+	display: inline;
+}
+
+.typewriter {
+	font-family: monospace;
+	color:black;
+	font-size:50px;
+	text-align: center;
+	margin-top:20%;
+}
+
+
+
