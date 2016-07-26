@@ -1,12 +1,10 @@
 var mongoose = require('mongoose');
-var MongooseSchema = new mongoose.Schema({
-    name: String,
-    weight: Number,
-    color: String
-});
+var SnippetSchema = new mongoose.Schema({
+    _users: [{type:Schema.Types.ObjectID, ref:'Userdb'}],
+    _stories: [{type:Schema.Types.ObjectID, ref:'Storydb'}],
+    content: {type: String}
+}, {timestamps: true});
 
-mongoose.model('Mongoosedb', MongooseSchema);
+mongoose.model('Snippetdb', SnippetSchema);
 // Validations
-MongooseSchema.path('color').required(true, 'Color cannot be blank');
-MongooseSchema.path('weight').required(true, 'Weight cannot be blank');
-MongooseSchema.path('name').required(true, 'Name cannot be blank');
+SnippetSchema.path('content').required(true, 'Content cannot be blank');
