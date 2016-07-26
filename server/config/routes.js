@@ -1,12 +1,8 @@
-module.exports = function(app){
-	app.post('/dummies/:test', function(req, res){
-		
-		// I'm testing the info that I'm getting from my dummy Factory
-		// I console.log the body and the params just to make sure that it's
-		// going through 
+var mongoose = require('mongoose');
+var users = require('./../controllers/users');
+var sessions = require('./../controllers/sessions');
 
-		console.log(req.body);
-		console.log(req.params.test)
-		// mongooseController.getMongooses(req, res);
-	})
+module.exports = function(app){
+	app.post('/users', users.create);
+	app.post('/sessions', sessions.create);
 }

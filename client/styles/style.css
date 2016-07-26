@@ -90,12 +90,30 @@ End of Style for Profile.html
 }
 
 .typewriter {
+	/*font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;*/
 	font-family: monospace;
 	color:black;
 	font-size:50px;
-	text-align: center;
+	margin-left: 20%;
+	/*text-align: center;*/
 	margin-top:20%;
 }
+
+
+.foncee{
+	background: rgba(231, 168, 60, 0.7);
+}
+
+.well{
+	background: rgba(231, 168, 60, 0.5);
+}
+
+.btn-custom{
+	background-color:  black;
+	border: 1px solid white;
+	padding: 5px 25px;
+	border-radius: 0px;
+	line-height: 40px;
 
 /*DASHBOARD HTML*/
 #nav_img {
@@ -124,4 +142,5 @@ End of Style for Profile.html
 	padding: 5px;
 	margin-right:25px;
 	height: 150;
+
 }
