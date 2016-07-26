@@ -12,48 +12,45 @@
 	background-size: cover;
 }
 
-#logo{
-	/*width: 100px;*/
-	margin-left: 20px;
+/*-----------------------
+Style for Profile.html
+-------------------------*/
+#userProfile {
+	height: 200px;
+	width: 200px;
+	margin: 10px 0px 10px 80px;
+
+}
+
+.side-bar {
 	display: inline-block;
+	height: 500px;
+	overflow: hidden;
 }
 
-.navbar-brand{
-	font-family: 'Dancing Script';
-	font-size: 45px;
-	text-decoration: none !important;
-	color: white;
+.topics {
+	
+	margin: 10px 0px 10px 50px;
+	height: 150px;
 }
 
-.navbar-brand:hover{
-	color: rgb(225,225,225);
+.updateProfile {
+	padding: 50px;
 }
 
-.navbar{
-	background: rgba(231, 168, 60, 0.3);
-	color: white;
+#userProfile, .side-bar, .topics {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#navbar a{
-	font-size: 20px;
-	color: white;
-	text-decoration: none !important;
+#userBio {
+	margin: 25px;
 }
 
-#magic{
-	color: black;
-	border-right: 1px solid #777;
-	padding-right: 7px;
-	display: inline;
+li {
+	list-style: none;
 }
 
-.typewriter {
-	font-family: monospace;
-	color:black;
-	font-size:50px;
-	text-align: center;
-	margin-top:20%;
-}
-
-
+/*------------------------------
+End of Style for Profile.html
+--------------------------------*/
 
