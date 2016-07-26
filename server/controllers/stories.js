@@ -13,6 +13,7 @@ module.exports = (function() {
     //   })
     // },
     create: function(req, res){
+      console.log('passed server routes');
       story = new storiesDb(req.body);
       story.save(function(err, story){
         if(err){

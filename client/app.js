@@ -1,4 +1,4 @@
-var myApp = angular.module('Myapp', ['ngRoute']);
+var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 // We instantiate our application and we inject ngrouter so that it's available
 // and so that we can use it to set up our routes below.
 
@@ -14,13 +14,25 @@ var myApp = angular.module('Myapp', ['ngRoute']);
 				controller: 'indexController',
 				templateUrl: "partials/index.html"
 			})
+
+			.when('/user/new',
+			{
+				controller: 'reglogController',
+				templateUrl: 'partials/userNew.html'
+			})
+
 			.when('/dashboard',{
 				controller: 'dashboardController',
 				templateUrl: 'partials/dashboard.html'
 			})
+
 			.when('/new_story', {
 				controller: 'new_storyController',
 				templateUrl: 'partials/new_story.html'
+			})
+
+			.when('/profile', {
+				templateUrl: 'partials/profile.html'
 			})
 	})
 }());
