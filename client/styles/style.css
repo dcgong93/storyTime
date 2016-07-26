@@ -57,6 +57,7 @@
 	margin-top:20%;
 }
 
+
 .foncee{
 	background: rgba(231, 168, 60, 0.7);
 }
@@ -71,4 +72,33 @@
 	padding: 5px 25px;
 	border-radius: 0px;
 	line-height: 40px;
+
+/*DASHBOARD HTML*/
+#nav_img {
+	padding-bottom:5px;
+}
+#nav_list {
+	padding-top:5px;
+}
+.borders {
+	border:2px solid black;
+}
+.900ht {
+	height:900px;
+}
+#left_main {
+	margin-right:-10px;
+	height:900px
+}
+#right_main {
+	height:900px
+}
+.padding5pt {
+	padding: 5px;
+}
+.main {
+	padding: 5px;
+	margin-right:25px;
+	height: 150;
+
 }
