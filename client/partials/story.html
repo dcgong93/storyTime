@@ -33,12 +33,13 @@
 </nav>
 <!-- END NAV -->
 <div class="text-center">
-  <h1>TITLE</h1>
+  <h1>{{story.title}}</h1>
   <!-- {{story.genre}} -->
-  <h4>genre</h4>
+  <h4>{{story.genre}}</h4>
   <!-- snippet content/writer/timestamp -->
   <div id="content">
-    <h1>content</h1>
+    <!-- SNIPPET CONTENT -->
+    <p>snippet content</p>
     <p>name -- timestamp</p>
   </div>
 <form ng-submit="addSnippet()">

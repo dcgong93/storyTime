@@ -7,6 +7,7 @@ myApp.factory('StoryFactory', ['$http', function($http){
 
 	var factory = {};
   var stories = [];
+	var story = [];
 
 	factory.getStories = function(callback){
 		$http.get('/stories').then(function(data){
@@ -14,6 +15,13 @@ myApp.factory('StoryFactory', ['$http', function($http){
 			callback(stories);
 		});
 	};
+	// factory.getStory = function(id, callback){
+	// 	console.log('story factory  id', id)
+	// 	$http.get('/story'+ id).then(function(data){
+	// 		story = data.data;
+	// 		callback(story);
+	// 	})
+	// };
 	factory.addStory = function(info, callback){
 		console.log('made it to story factory');
 		$http.post('/stories', info).then(function(data){
