@@ -1,4 +1,4 @@
-myApp.controller('storyController', ['$scope', '$location', 'SnippetFactory', '$routeParams', function($scope, $location, SnippetFactory, $routeParams){
+myApp.controller('storyController', ['$scope', '$location', '$cookies', 'SnippetFactory', '$routeParams', function($scope, $location, $cookies, SnippetFactory, $routeParams){
 	// Here is where we are creating indexController.
 	// You have to make sure that our index controller matches the name
 	// that we pass in, in our router.
@@ -16,10 +16,10 @@ myApp.controller('storyController', ['$scope', '$location', 'SnippetFactory', '$
 
   $scope.addSnippet = function(){
     console.log('client side story controller create snippet', $scope.snippet);
-		$scope.snippet._users = $cookie._id;
-		console.log($cookie._id);
+		$scope.snippet._users = $cookies.get('auth')._id;
+		console.log('printing cookies id', $cookies.getObject('_id'));
 		$scope.snippet._stories = $routeParams.id;
-		console.log($routeParams.id);
+		console.log('printing params id',$routeParams.id);
     SnippetFactory.createSnippet($scope.snippet, function(data){
   		$scope.snippet = data;
   	})

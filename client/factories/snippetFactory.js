@@ -25,7 +25,7 @@ myApp.factory('SnippetFactory', ['$http', function($http){
 			if(data.error){
 				console.log(data.error);
 			} else {
-				stories.push(data.data);
+				snippets.push(data.data);
 				callback(snippets);
 			}
 		})
