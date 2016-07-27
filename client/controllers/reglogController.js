@@ -1,4 +1,4 @@
-myApp.controller('reglogController', function ($scope, registerFactory, loginFactory, $cookies) {
+myApp.controller('reglogController', function ($scope, $location, registerFactory, loginFactory, $cookies) {
 
 	console.log($cookies);
 	
@@ -12,7 +12,15 @@ myApp.controller('reglogController', function ($scope, registerFactory, loginFac
 	$scope.loginUser = function(){
 		loginFactory.login($scope.user, function(data){
 			console.log(data);
-			$scope.user = "";
+			if(data.errors){
+				$scope.user = "";
+				$scope.test = data;
+			} else{
+				$scope.user = "";
+				$location.path('/dashboard');
+			}
+			
+
 		})
 	}
 })

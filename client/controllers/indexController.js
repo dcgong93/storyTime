@@ -1,4 +1,4 @@
-myApp.controller('indexController', function($scope, dummyFactory){
+myApp.controller('indexController', function($scope, $location, dummyFactory){
 	// Here is where we are creating indexController. 
 	// You have to make sure that our index controller matches the name 
 	// that we pass in, in our router. 
@@ -10,4 +10,6 @@ myApp.controller('indexController', function($scope, dummyFactory){
 	dummyFactory.addDummy({name: 'req.body.test', status: 'working'}, function(data){
 		console.log(data);
 	})
+
+
 })

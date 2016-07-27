@@ -1,0 +1,28 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid text-center">
+    <div class="navbar-header">
+      <img id="nav_img" class="navbar-brand" alt="Brand" src="http://i.imgur.com/6PZAfHj.jpg" height="100" width="100">
+    </div>
+    <div class="row">
+      <h1 class="navbar-text">Story Time</h1><small>
+      <ul id="nav_list" class="list-inline navbar-text">
+        <li><a href="#/dashboard"><u>Dashboard</u></a></li>
+        <li><a href="#/all_stories"><u>All Stories</u></a></li>
+        <li><a href="#/new_story"><u>New Story</u></a></li>
+        <li><a href="#/users"><u>Users</u></a></li>
+      </ul></small>
+      <button type="button" class="btn btn-default navbar-btn" style="position:relative; float:right">Sign in</button>
+    </div>
+  </div>
+</nav>
+<!-- END NAV -->
+<div>
+  <form ng-submit="createStory()">
+    Title:<br>
+    <input type="text" ng-model="story.title"><br>
+    Topic:<br>
+    <input type="text" ng-model="story.genre"><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
