@@ -1,4 +1,4 @@
-var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
+var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies','angularFileUpload']);
 // We instantiate our application and we inject ngrouter so that it's available
 // and so that we can use it to set up our routes below.
 
@@ -27,6 +27,7 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 			})
 
 			.when('/profile', {
+				controller: 'userController',
 				templateUrl: 'partials/profile.html'
 			})
 	})
