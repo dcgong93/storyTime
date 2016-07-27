@@ -8,7 +8,8 @@ var express  = require( 'express' ),
 
 app.use( express.static( path.join( root, 'client' )));
 app.use( express.static( path.join( root, 'bower_components' )));
-app.use(bp.json())
+app.use(express.static(path.join(root, 'bcryptjs')));
+app.use(bp.json());
 
 require('./server/config/db.js');
 require('./server/config/routes.js')(app);
