@@ -34,5 +34,9 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 			.when('/profile', {
 				templateUrl: 'partials/profile.html'
 			})
+			.when('/story', {
+				controller: 'storyController',
+				templateUrl: 'partials/story.html'
+			})
 	})
 }());

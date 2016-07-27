@@ -3,15 +3,15 @@ var storiesDb = stories.model('Story');
 
 module.exports = (function() {
   return {
-    // getProducts: function(req, res){
-    //   productsDb.find({}, function(err, products){
-    //     if(err){
-    //       console.log('get products server error', err);
-    //     } else {
-    //       res.json(products);
-    //     }
-    //   })
-    // },
+    getStories: function(req, res){
+      storiesDb.find({}, function(err, stories){
+        if(err){
+          console.log('get stories server error', err);
+        } else {
+          res.json(stories);
+        }
+      })
+    },
     create: function(req, res){
       console.log('passed server routes');
       story = new storiesDb(req.body);

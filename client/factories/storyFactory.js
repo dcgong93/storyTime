@@ -8,12 +8,12 @@ myApp.factory('StoryFactory', ['$http', function($http){
 	var factory = {};
   var stories = [];
 
-	// factory.getProducts = function(callback){
-	// 	$http.get('/products').then(function(data){
-	// 		products = data.data;
-	// 		callback(products);
-	// 	});
-	// };
+	factory.getStories = function(callback){
+		$http.get('/stories').then(function(data){
+			stories = data.data;
+			callback(stories);
+		});
+	};
 	factory.addStory = function(info, callback){
 		console.log('made it to story factory');
 		$http.post('/stories', info).then(function(data){
