@@ -1,7 +1,7 @@
 myApp.controller('reglogController', function ($scope, $location, registerFactory, loginFactory, $cookies) {
 
 	console.log($cookies);
-	
+
 	$scope.registerUser = function(){
 		registerFactory.registerUser($scope.newUser, function(data){
 			console.log(data);
@@ -19,7 +19,7 @@ myApp.controller('reglogController', function ($scope, $location, registerFactor
 				$scope.user = "";
 				$location.path('/dashboard');
 			}
-			
+
 
 		})
 	}

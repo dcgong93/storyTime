@@ -1,4 +1,4 @@
-myApp.controller('storyController', ['$scope', 'SnippetFactory', function($scope, SnippetFactory){
+myApp.controller('storyController', ['$scope', '$location', 'SnippetFactory', '$routeParams', function($scope, $location, SnippetFactory, $routeParams){
 	// Here is where we are creating indexController.
 	// You have to make sure that our index controller matches the name
 	// that we pass in, in our router.
@@ -7,14 +7,21 @@ myApp.controller('storyController', ['$scope', 'SnippetFactory', function($scope
 
 	console.log('I am able to load my storyController along with story.html partial');
 
-  $scope.addSnippet = function(){
-    console.log('client side new story controller');
-		console.log('before', $scope.snippet);
-		$scope.snippet._users = $cookie._id;
-		console.log('after', $scope.snippet);
+	var storId = $routeParams.id;
+	console.log('this is storId', storId);
+	SnippetFactory.getStory(storId, function(data){
+		console.log('story controller to get new story', data);
+		$scope.story = data;
+	})
 
-    SnippetFactory.createSnippet($scope.story, function(data){
-  		$scope.story = data;
+  $scope.addSnippet = function(){
+    console.log('client side story controller create snippet', $scope.snippet);
+		$scope.snippet._users = $cookie._id;
+		console.log($cookie._id);
+		$scope.snippet._stories = $routeParams.id;
+		console.log($routeParams.id);
+    SnippetFactory.createSnippet($scope.snippet, function(data){
+  		$scope.snippet = data;
   	})
   }
 }])

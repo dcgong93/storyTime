@@ -30,7 +30,7 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 				templateUrl: 'partials/profile.html'
 			})
 
-			.when('/story', {
+			.when('/story/:id', {
 				controller: 'storyController',
 				templateUrl: 'partials/story.html'
 			})
