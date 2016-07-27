@@ -7,7 +7,16 @@ myApp.factory('SnippetFactory', ['$http', function($http){
 
 	var factory = {};
   var snippets = [];
+	var story = {};
 
+	factory.getStory = function(id, callback){
+		console.log('story factory  id', id)
+		$http.get('/story/'+ id).then(function(data){
+			story = data.data;
+			console.log('snippet factory data.data', data.data);
+			callback(story);
+		})
+	};
 
 	factory.createSnippet = function(info, callback){
 		console.log('made it to snippet factory');
@@ -16,7 +25,7 @@ myApp.factory('SnippetFactory', ['$http', function($http){
 			if(data.error){
 				console.log(data.error);
 			} else {
-				stories.push(data.data);
+				snippets.push(data.data);
 				callback(snippets);
 			}
 		})
