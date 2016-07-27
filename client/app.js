@@ -23,16 +23,19 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 
 			.when('/new_story', {
 				controller: 'new_storyController',
-				templateUrl: 'partials/new_story.html'
+				templateUrl: 'partials/new_story.html',
+				authenticated: true
 			})
 
 			.when('/profile', {
-				templateUrl: 'partials/profile.html'
+				templateUrl: 'partials/profile.html',
+				authenticated: true
 			})
 
 			.when('/story', {
 				controller: 'storyController',
-				templateUrl: 'partials/story.html'
+				templateUrl: 'partials/story.html',
+				authenticated: true
 			})
 
 			.otherwise({redirectTo:'/'});
