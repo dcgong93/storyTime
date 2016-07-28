@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
+var Schema = mongoose.Schema
 
 var userSchema = new mongoose.Schema({
     fname: {
@@ -14,9 +15,9 @@ var userSchema = new mongoose.Schema({
     	type: String,
     	required: [true, "Email can't be empty"]
     },
-    phone:{
-    	type: String,
-    	required: [true, "Phone can't be empty"]
+    picture:{
+    	type: Schema.Types.Mixed
+    	// required: [true, "File can't be empty"]
     },
     location:{
     	type: String,

@@ -15,7 +15,7 @@ myApp.controller('reglogController', function ($scope, $location, registerFactor
 			if(data.errors){
 				$scope.user = "";
 				$scope.test = data;
-			}else{
+			} else{
 				$scope.user = "";
 				$location.path('/dashboard');
 			}

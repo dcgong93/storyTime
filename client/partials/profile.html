@@ -1,3 +1,16 @@
+<nav class="navbar foncee">
+<div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#/">StoryHub</a>
+  </div>
+</div><!--/.container-fluid -->
+</nav>
 
 <!-- Profile page -->
 <div class = "container">
@@ -13,7 +26,20 @@
 				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 			</div>
 			
-			<a href = "" data-toggle="modal" data-target=".bs-example-modal-lg">Update Profile</a>
+			<a data-toggle="modal" data-target=".bs-example-modal-lg">Update Profile</a>
+
+			<!-- Image uploads -->
+			<div ng-controller="AppController">
+		        <input type="file" nv-file-select uploader="uploader"/><br/>
+		        <ul>
+		            <li ng-repeat="item in uploader.queue">
+		                Name: <span ng-bind="item.file.name"></span><br/>
+		                <button ng-click="item.upload()">upload</button>
+		            </li>
+		        </ul>
+		    </div>
+
+		    <!-- End of image upload -->
 
 			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 			  <div class="modal-dialog modal-lg" role="document">

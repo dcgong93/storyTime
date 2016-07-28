@@ -5,6 +5,7 @@
     "bcryptjs": "^2.3.0",
     "body-parser": "latest",
     "express": "~4.2.0",
-    "mongoose": "latest"
+    "mongoose": "latest",
+    "morgan": "^1.7.0"
   }
 }
