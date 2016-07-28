@@ -8,6 +8,7 @@ var snippets = require('./../controllers/snippets');
 
 module.exports = function(app){
 	app.post('/users', users.create);
+	// app.post('/user_image', users.upload);
 	app.post('/sessions', sessions.create);
 	app.post('/stories', stories.create);
 	app.get('/stories', stories.getStories);
