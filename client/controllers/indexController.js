@@ -1,15 +1,19 @@
-myApp.controller('indexController', function($scope, $location, dummyFactory){
-	// Here is where we are creating indexController. 
-	// You have to make sure that our index controller matches the name 
-	// that we pass in, in our router. 
-	// So far the only variable that I'm injecting into this controller
-	// is $scope.
 
+myApp.controller('indexController', function($scope, loginFactory, $cookies, $location){
 	console.log('I am able to load my indexController along with my index partial');
 
-	dummyFactory.addDummy({name: 'req.body.test', status: 'working'}, function(data){
-		console.log(data);
-	})
+	$scope.loginUser = function(){
+		loginFactory.login($scope.user, function(data){
+			console.log('these are cookies', $cookies._id);
+			if(data.errors){
+				$scope.user = "";
+				$scope.test = data;
+			}else{
+				$scope.user = "";
+				$location.path('/dashboard');
+			}
 
 
+		})
+	}
 })

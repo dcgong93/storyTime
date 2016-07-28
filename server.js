@@ -2,7 +2,7 @@ var express  = require( 'express' ),
     path     = require( 'path' ),
     root     = __dirname,
     port     = process.env.PORT || 8000,
-    morgan   = require('morgan'),
+    // morgan   = require('morgan'),
     bp       = require('body-parser'),
     app      = express();
 

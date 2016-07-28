@@ -1,6 +1,7 @@
 myApp.factory('loginFactory', function($http, $cookies){
 	var factory = {};
-	var currentUser;
+	var currentUser = {};
+
 
 	factory.login = function(user, cb){
 		$http.post('/sessions', user).then(function(data){
@@ -10,18 +11,22 @@ myApp.factory('loginFactory', function($http, $cookies){
 				$cookies.putObject('auth', data.data);
 				cb(data);
 			}
-			// $cookies.put('auth', data.data)
-			// var logged = $cookies.get('auth')
-			console.log('cookies', data.data);
 		});
-	};
+	}
+
+	// factory.getUser = function(cb){
+	// 	console.log('getUser',$cookies.get("auth"));
+	// 	cb($cookies.get("auth"));
+	// }
 
 	factory.getAuthStatus = function(){
 		var status = $cookies.get('auth');
 		if (status) {
+			console.log('logged');
 			return true;
 		}else{
 			return false;
+			console.log('not logged');
 		}
 	}
 
