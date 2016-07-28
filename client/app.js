@@ -61,5 +61,11 @@ myApp.run(function($rootScope, $location, loginFactory){
 					$location.path(current.$$route.originalPath);
 				}
 			}
+
+			if(next.$$route.originalPath == '/user/new') {
+				if (loginFactory.getAuthStatus()) {
+					$location.path(current.$$route.originalPath);
+				}
+			}
 		});
 })
