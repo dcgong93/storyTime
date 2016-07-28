@@ -1,5 +1,6 @@
 myApp.factory('loginFactory', function($http, $cookies){
 	var factory = {};
+	var currentUser;
 
 	factory.login = function(user, cb){
 		$http.post('/sessions', user).then(function(data){

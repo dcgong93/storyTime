@@ -13,4 +13,5 @@ module.exports = function(app){
 	app.post('/stories', stories.create);
 	app.get('/stories', stories.getStories);
 	app.post('/snippets', snippets.create);
+	app.get('/story/:id', stories.getStory);
 }

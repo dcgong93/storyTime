@@ -1,4 +1,4 @@
-myApp.controller('new_storyController', ['$scope', 'StoryFactory', function($scope, StoryFactory){
+myApp.controller('new_storyController', ['$scope', '$location', 'StoryFactory', function($scope, $location, StoryFactory){
 	// Here is where we are creating indexController.
 	// You have to make sure that our index controller matches the name
 	// that we pass in, in our router.
@@ -11,6 +11,8 @@ myApp.controller('new_storyController', ['$scope', 'StoryFactory', function($sco
     console.log('client side new story controller');
     StoryFactory.addStory($scope.story, function(data){
   		$scope.story = data;
+			console.log($scope.story[0]._id);
+			$location.path("/story/"+$scope.story[0]._id);
   	})
   }
 }])

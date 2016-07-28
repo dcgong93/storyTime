@@ -26,17 +26,20 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies','angularFileUpload']
 
 			.when('/new_story', {
 				controller: 'new_storyController',
-				templateUrl: 'partials/new_story.html'
+				templateUrl: 'partials/new_story.html',
+				authenticated: true
 			})
 
 			.when('/profile', {
 				controller: 'userController',
-				templateUrl: 'partials/profile.html'
+				templateUrl: 'partials/profile.html',
+				authenticated: true
 			})
 
-			.when('/story', {
+			.when('/story/:id', {
 				controller: 'storyController',
-				templateUrl: 'partials/story.html'
+				templateUrl: 'partials/story.html',
+				authenticated: true
 			})
 
 			.otherwise({redirectTo:'/'});
