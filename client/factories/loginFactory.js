@@ -1,6 +1,6 @@
 myApp.factory('loginFactory', function($http, $cookies){
 	var factory = {};
-	currentUser
+	var currentUser = {};
 
 	factory.login = function(user, cb){
 		$http.post('/sessions', user).then(function(data){
@@ -8,11 +8,9 @@ myApp.factory('loginFactory', function($http, $cookies){
 				cb(data.data.errors);
 			}else{
 				$cookies.put('auth', data.data);
+				currentUser = data.data;
 				cb('hello');
 			}
-			// $cookies.put('auth', data.data)
-			// var logged = $cookies.get('auth')
-			console.log('cookies', data.data);
 		});
 	};
 
