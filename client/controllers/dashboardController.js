@@ -1,14 +1,11 @@
-myApp.controller('dashboardController', ['$scope', 'StoryFactory', function($scope, StoryFactory){
-	// Here is where we are creating indexController.
-	// You have to make sure that our index controller matches the name
-	// that we pass in, in our router.
-	// So far the only variable that I'm injecting into this controller
-	// is $scope.
+myApp.controller('dashboardController', ['$scope', '$cookies','StoryFactory', "loginFactory", function($scope, $cookies,StoryFactory,loginFactory){
+	$scope.userObj = $cookies.getObject('auth');
+	console.log('I am able to load my dash ctrl along with my dashboard partial', $scope.userObj.fname);
 
-	console.log('I am able to load my new_storyController along with my dashboard partial');
+	
 
-  StoryFactory.getStories(function(data){
-    console.log('dashboard controller getting stories', data);
-    $scope.stories = data;
-  })
+	StoryFactory.getStories(function(data){
+	console.log('dashboard controller getting stories', data);
+	$scope.stories = data;
+	})
 }])

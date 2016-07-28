@@ -1,4 +1,4 @@
-var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies','angularFileUpload']);
+var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 // We instantiate our application and we inject ngrouter so that it's available
 // and so that we can use it to set up our routes below.
 
@@ -15,7 +15,7 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies','angularFileUpload']
 			.when('/user/new',
 			{
 				controller: 'reglogController',
-				templateUrl: 'partials/userNew.html'
+				templateUrl: 'partials/userNew.html',
 			})
 
 			.when('/dashboard',{
@@ -57,7 +57,6 @@ myApp.run(function($rootScope, $location, loginFactory){
 			}
 
 			if(next.$$route.originalPath == '/') {
-				console.log('login page');
 				if (loginFactory.getAuthStatus()) {
 					$location.path(current.$$route.originalPath);
 				}
