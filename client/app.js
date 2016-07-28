@@ -15,7 +15,7 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 			.when('/user/new',
 			{
 				controller: 'reglogController',
-				templateUrl: 'partials/userNew.html'
+				templateUrl: 'partials/userNew.html',
 			})
 
 			.when('/dashboard',{
@@ -30,7 +30,7 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 				authenticated: true
 			})
 
-			.when('/profile', {
+			.when('/profile/:id', {
 				controller: 'userController',
 				templateUrl: 'partials/profile.html',
 				authenticated: true
@@ -57,7 +57,6 @@ myApp.run(function($rootScope, $location, loginFactory){
 			}
 
 			if(next.$$route.originalPath == '/') {
-				console.log('login page');
 				if (loginFactory.getAuthStatus()) {
 					$location.path(current.$$route.originalPath);
 				}
