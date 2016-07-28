@@ -1,4 +1,4 @@
-myApp.controller('dashboardController', ['$scope', 'StoryFactory', function($scope, StoryFactory){
+myApp.controller('dashboardController', ['$scope', '$cookies', 'StoryFactory', function($scope, StoryFactory){
 	// Here is where we are creating indexController.
 	// You have to make sure that our index controller matches the name
 	// that we pass in, in our router.

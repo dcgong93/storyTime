@@ -7,8 +7,8 @@ myApp.factory('loginFactory', function($http, $cookies){
 			if(data.data.errors){
 				cb(data.data.errors);
 			}else{
-				$cookies.put('auth', data.data);
-				cb('hello');
+				$cookies.putObject('auth', data.data);
+				cb(data);
 			}
 			// $cookies.put('auth', data.data)
 			// var logged = $cookies.get('auth')
