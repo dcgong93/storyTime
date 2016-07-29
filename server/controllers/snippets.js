@@ -34,7 +34,14 @@ module.exports = (function() {
     },
 
     getAll: function(req, res){
-      snippetsDb.find({}).populate('_snippets')
+      console.log("+++++++++++++++++++++++++++++++++++++++++++" ,req.params);
+      snippetsDb.find({_stories: req.params.id}).populate('_users').exec(function(err, result){
+        if (err) {
+          console.log(err);
+        }else{
+          res.json(result);
+        }
+      })
     }
   }
 })();

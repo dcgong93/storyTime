@@ -28,9 +28,11 @@ myApp.factory('userFactory', function($http,$cookies){
 		});
 	}
 
-	factory.getStory = function(id , callback) {
-		console.log("This is userFactory", id);
-		$http.get()
+	factory.getStories = function(id , callback) {
+		console.log("This is userFactory", {id: id});
+		$http.get('/stories/user/'+id).then(function(data){
+			callback(data);
+		})
 
 	}
 

@@ -7,9 +7,9 @@ myApp.controller('userController', function($scope, $cookies, $routeParams, $loc
 		$scope.User = data[0];
 	})
 
-	userFactory.getStory($scope.userObj._id, function(data) {
+	userFactory.getStories($scope.userObj._id, function(data) {
 		console.log("Made it to userController to get story",data);
-		$scope.story = data;
+		$scope.stories = data.data;
 	})
 
 	$scope.updateUser = function() {

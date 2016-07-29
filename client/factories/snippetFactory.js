@@ -14,13 +14,17 @@ myApp.factory('SnippetFactory', ['$http', function($http){
 		$http.get('/story/'+ id).then(function(data){
 			story = data.data;
 			console.log('snippet factory data.data', data.data);
+			for(var i=0; i<data.data._snippets.length; i++){
+				snippets.push(data.data._snippets[i]);
+			}
 			callback(story);
 		})
 	};
 
-	factory.getSnippets = function(callback){
-		$http.get('/snippets').then( function(data){
+	factory.getSnippets = function(story_id, callback){
+		$http.get('/snippets/'+story_id).then( function(data){
 			snippets = data.data;
+			console.log('sniipppppp',snippets);
 			callback(snippets);
 		})
 	};
@@ -32,7 +36,9 @@ myApp.factory('SnippetFactory', ['$http', function($http){
 			if(data.error){
 				console.log(data.error);
 			} else {
+				console.log("++++++++++++++++", snippets);
 				snippets.push(data.data);
+				console.log("++++++++++++++++", snippets);
 				callback(snippets);
 			}
 		})
