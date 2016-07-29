@@ -1,6 +1,6 @@
 
 var mongoose = require('mongoose');
-var users = require('./../controllers/users');
+var users = require('./../controllers/users.js');
 var stories = require('./../controllers/stories.js');
 var sessions = require('./../controllers/sessions');
 var snippets = require('./../controllers/snippets');
@@ -14,4 +14,7 @@ module.exports = function(app){
 	app.get('/stories', stories.getStories);
 	app.post('/snippets', snippets.create);
 	app.get('/story/:id', stories.getStory);
+	app.post('/users/:id/update', users.update);
+	app.get('/currentUser/:id', users.getCurrentuser);
+	app.get('/snippets', snippets.getAll);
 }

@@ -41,8 +41,13 @@
   <div id="content">
     <!-- SNIPPET CONTENT -->
     <p style="text-align: justify">{{story.content}}</p>
-    <p>name -- timestamp</p>
+    <p>{{story._user.fname}}</p>
   </div>
+
+  <div id="snippets">
+    <p ng-repeat=" sni in story._snippets" >{{sni.content}}</p>
+  </div>
+
 <form ng-submit="addSnippet()">
   <div class="col-sm-12">
     <textarea class="form-control " id="exampleTextarea" rows="10" placeholder="Unleash your imagination..." ng-model= 'snippet.content'></textarea>
