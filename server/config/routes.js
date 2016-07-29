@@ -16,4 +16,5 @@ module.exports = function(app){
 	app.get('/story/:id', stories.getStory);
 	app.post('/users/:id/update', users.update);
 	app.get('/currentUser/:id', users.getCurrentuser);
+	app.get('/snippets', snippets.getAll);
 }

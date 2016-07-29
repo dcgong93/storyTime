@@ -21,7 +21,7 @@
   </div>
   <ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
-      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nazim <span class="caret"></span></a>
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userObj.fname}} <span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="#">Profile</a></li>
         <li role="separator" class="divider"></li>
@@ -32,6 +32,7 @@
 </div><!--/.container-fluid -->
 </nav>
 <!-- END NAV -->
+<div class="container">
 <div class="text-center">
   <h1>{{story.title}}</h1>
   <!-- {{story.genre}} -->
@@ -39,12 +40,21 @@
   <!-- snippet content/writer/timestamp -->
   <div id="content">
     <!-- SNIPPET CONTENT -->
-    <p>snippet content</p>
-    <p>name -- timestamp</p>
+    <p style="text-align: justify">{{story.content}}</p>
+    <p>{{story._user.fname}}</p>
   </div>
+
+  <div id="snippets">
+    <p ng-repeat=" sni in story._snippets" >{{sni.content}}</p>
+  </div>
+
 <form ng-submit="addSnippet()">
-  <textarea rows="15" cols="150" placeholder="Type your part of the story!"ng-model= 'snippet.content'></textarea><br />
+  <div class="col-sm-12">
+    <textarea class="form-control " id="exampleTextarea" rows="10" placeholder="Unleash your imagination..." ng-model= 'snippet.content'></textarea>
+  </div>
+<!--   <textarea class="form-control col-sm-5" rows="15" placeholder="Type your part of the story!" ng-model= 'snippet.content'></textarea><br /> -->
   <button class="btn btn-success" type="submit">Submit</button>
 </form>
 
+</div>
 </div>

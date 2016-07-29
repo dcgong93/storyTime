@@ -14,14 +14,25 @@ module.exports = (function() {
     },
     getStory: function(req, res){
       console.log('this is req.params.id',req.params.id)
-      storiesDb.findOne({_id:req.params.id}, function(err, story){
+      storiesDb.findOne({_id:req.params.id})
+      .populate('_user')
+      .populate('_snippets')
+      .exec(function(err, story){
         if(err){
           console.log('get stories server error', err);
         } else {
-          console.log(story)
+          console.log('=====================>',story)
           res.json(story);
         }
       })
+      // , function(err, story){
+      //   if(err){
+      //     console.log('get stories server error', err);
+      //   } else {
+      //     console.log(story)
+      //     res.json(story);
+      //   }
+      // })
     },
     create: function(req, res){
       console.log('passed server routes');

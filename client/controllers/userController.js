@@ -21,7 +21,4 @@ myApp.controller('userController', function($scope, $cookies, $routeParams, $loc
 		})
 	}
 
-
-
-	
 })

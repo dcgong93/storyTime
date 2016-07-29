@@ -1,3 +1,5 @@
+<!-- NAVBAR -->
+
 <nav class="navbar foncee">
 <div class="container-fluid">
   <div class="navbar-header">
@@ -8,6 +10,13 @@
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="#/">StoryHub</a>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#/dashboard">Dashboard</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="#/new_story">Stories</a>
+      </li>
+  </ul>
   </div>
   <ul class="nav navbar-nav navbar-right links">
   	<li><a href="#/dashboard">Dashboard</a></li>
@@ -36,11 +45,11 @@
 			<h4 class = "profile_name">{{User.fname}} {{User.lname}}</h4>
 			<div id = "userBio">
 				<p>About Me:</p>
-				<p>{{User.bio}}</p>
-				
+				<p>{{User.bio}}</p>	
 			</div>
 			
 			<a href = "" data-toggle="modal" data-target=".bs-example-modal-lg" class = "modal_link">Update Profile</a>
+
 
 			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 			  <div class="modal-dialog modal-lg" role="document">
