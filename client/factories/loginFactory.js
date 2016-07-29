@@ -14,11 +14,6 @@ myApp.factory('loginFactory', function($http, $cookies){
 		});
 	}
 
-	// factory.getUser = function(cb){
-	// 	console.log('getUser',$cookies.get("auth"));
-	// 	cb($cookies.get("auth"));
-	// }
-
 	factory.getAuthStatus = function(){
 		var status = $cookies.get('auth');
 		if (status) {
@@ -28,6 +23,11 @@ myApp.factory('loginFactory', function($http, $cookies){
 			return false;
 			console.log('not logged');
 		}
+	}
+
+	factory.deleteUser = function(cb){
+		$cookies.remove('auth');
+		cb('hello');
 	}
 
 	return factory;
