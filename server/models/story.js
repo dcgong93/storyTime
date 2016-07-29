@@ -6,8 +6,8 @@ var StorySchema = new mongoose.Schema({
     title: String,
     genre: String,
     content: String,
-    _snippets: [{type:Schema.Types.ObjectId, ref:'Snippetdb'}],
-    _user: [{type:Schema.Types.ObjectId, ref:'User'}],
+    _snippets: [{type:Schema.Types.ObjectId, ref:'Snippet'}],
+    _user: {type:Schema.Types.ObjectId, ref:'User'},
 }, {timestamps: true});
 
 mongoose.model('Story', StorySchema);

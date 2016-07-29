@@ -6,7 +6,7 @@ myApp.factory('StoryFactory', ['$http', function($http){
 	// as how we would create a get request.
 
 	var factory = {};
-  var stories = [];
+  	var stories = [];
 	var story = [];
 
 	factory.getStories = function(callback){
