@@ -13,13 +13,8 @@
     <li><a href="#/dashboard">Dashboard</a></li>
   <li role="presentation"><a href="#/new_story">Story</a></li>
     <li class="dropdown">
-<<<<<<< HEAD
-      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userObj.fname}} <span class="caret"></span></a>
-      <ul class="dropdown-menu">
-=======
       <a href="" class="dropdown-toggle" data-toggle="dropdown" role="" aria-haspopup="true" aria-expanded="false">{{userObj.fname}} {{userObj.lname}} <span class="caret"></span></a>
       <ul class="dropdown-menu drop">
->>>>>>> e984e1bf8992417f7e2b5cad7cf4beb8044ef360
         <li><a href="#/profile/{{userObj._id}}">Profile</a></li>
         <li role="separator" class="divider"></li>
         <li><a href="" ng-click="deleteUser()">Logout</a></li>
@@ -45,7 +40,7 @@
               <label for="genre">Genre</label>
               <input type="text" class="form-control" id="genre" placeholder="Genre" ng-model = "story.genre">
             </div>
-            <div class="form-group"> 
+            <div class="form-group">
               <label for="exampleTextarea" class="control-label col-sm-1">Story: </label>
               <div class="form-group">
                 <textarea class="form-control " id="exampleTextarea" rows="10" placeholder="Unleash your imagination..." ng-model="story.content"></textarea>
@@ -58,12 +53,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-

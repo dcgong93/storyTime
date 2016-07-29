@@ -15,13 +15,8 @@ var userSchema = new mongoose.Schema({
     	type: String,
     	required: [true, "Email can't be empty"]
     },
-    picture:{
-    	type: Schema.Types.Mixed
-    	// required: [true, "File can't be empty"]
-    },
     bio: {
-        type:String,
-        required: [true, "Add something about yourself"]
+        type:String
     },
     location:{
     	type: String,

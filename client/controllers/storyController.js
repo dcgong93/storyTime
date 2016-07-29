@@ -1,4 +1,4 @@
-myApp.controller('storyController', ['$scope', '$location', '$cookies', 'SnippetFactory', '$routeParams', function($scope, $location, $cookies, SnippetFactory, $routeParams){
+myApp.controller('storyController', ['$scope', '$location', '$cookies', 'SnippetFactory', '$routeParams', 'loginFactory', function($scope, $location, $cookies, SnippetFactory, $routeParams, loginFactory){
 	$scope.userObj = $cookies.getObject('auth');
 	console.log('I am able to load my storyController along with story.html partial');
 	var storId = $routeParams.id;
@@ -13,6 +13,11 @@ myApp.controller('storyController', ['$scope', '$location', '$cookies', 'Snippet
 		console.log('all snippets', data)
 		$scope.snippets = data;
 	})
+	$scope.deleteUser = function(){
+		loginFactory.deleteUser(function(data){
+			$location.path('/');
+		})
+	}
 
   $scope.addSnippet = function(){
     console.log('client side story controller create snippet', $scope.snippet);

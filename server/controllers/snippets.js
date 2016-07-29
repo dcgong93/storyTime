@@ -15,18 +15,20 @@ module.exports = (function() {
           Story.findByIdAndUpdate(newSnippet._stories, {$push: {_snippets: newSnippet._id}}, function(error, conf){
             var story = new Story(newSnippet);
             story.save(function(err){
-              if(err){
-                console.log(err);
+              if(error){
+                console.log(error);
               }else{
-
+                console.log('this is new SNIPPET\n\n\n\n', newSnippet._id);
+                // newSnippet.populate('_users').exec(function(err, result){
+                //   if (err) {
+                //     console.log(err);
+                //   }else{
+                //     res.json(result);
+                //   }
+                // })
+                res.json(newSnippet);
               }
             })
-            if(error){
-              console.log(error);
-            }else{
-              console.log('this is new SNIPPET\n\n\n\n', newSnippet._id);
-              res.json(newSnippet);
-            }
           });
 
         }
