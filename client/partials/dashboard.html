@@ -5,23 +5,18 @@
   <div class="navbar-header">
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
       <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar">what</span>
+      <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="#/">StoryHub</a>
-
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#/dashboard">Dashboard</a></li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/new_story">Stories</a>
-      </li>
-  </ul>
   </div>
-  <ul class="nav navbar-nav navbar-right">
+  <ul class="nav navbar-nav navbar-right links">
+    <li><a href="#/dashboard">Dashboard</a></li>
+  <li role="presentation"><a href="#/new_story">Story</a></li>
     <li class="dropdown">
       <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userObj.fname}} {{userObj.lname}} <span class="caret"></span></a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu drop">
         <li><a href="#/profile/{{userObj._id}}">Profile</a></li>
         <li role="separator" class="divider"></li>
         <li><a href="" ng-click="deleteUser()">Logout</a></li>
@@ -34,19 +29,16 @@
 
 <div class="container">
 <div class="row">
-  <div id="left_main" class="col-md-8 well">
+  <div id="left_main" class="col-md-12">
     <h1 class="text-center">Top Stories</h1>
     <ul style="list-style-type:none">
       <!-- REPEAT TOP/RECENT STORIES -->
       <li ng-repeat="story in stories">
-        <div class="row main">
-          <div class="col-sm-4">
-            <img src="http://i.imgur.com/6PZAfHj.jpg" alt="image" height="120" width="150" style="padding-top:10px"/>
-          </div>
-          <div class="col-sm-8 row">
-            <a href="#/story/{{story._id}}"><h3 class="text-center">{{story.title}}</h3></a>
+        <div class="row">
+          <div class="col-sm-12 stories">
+            <a href="#/story/{{story._id}}"><h2 class="text-center">{{story.title}}</h2></a>
             <div class="col-sm-3">
-              <p>{{story.genre}}</p>
+              <p>Genre: <i>{{story.genre}}</i></p>
             </div>
             <div style="overflow: hidden;  height: 20px;" class="col-sm-12">
               <p >{{story.content}}</p>
@@ -56,10 +48,9 @@
       </li>
     </ul>
   </div>
-  <div id="right_main" class="col-md-4 " style="overflow-y:auto;">
+<!--   <div id="right_main" class="col-md-4 " style="overflow-y:auto;">
     <h1 class="text-center">Following</h1>
     <ul style="list-style-type:none">
-      <!-- REPEAT FOLLOWING STORIES -->
       <li ng-repeat="story in stories">
         <div class="row well main">
           <div class="col-sm-4">
@@ -72,7 +63,7 @@
         </div>
       </li>
     </ul>
-  </div>
+  </div> -->
 </div>
 </div>
 

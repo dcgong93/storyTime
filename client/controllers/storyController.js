@@ -9,7 +9,7 @@ myApp.controller('storyController', ['$scope', '$location', '$cookies', 'Snippet
 		$scope.story = data;
 	})
 
-	SnippetFactory.getSnippets(function(data){
+	SnippetFactory.getSnippets(storId, function(data){
 		console.log('all snippets', data)
 		$scope.snippets = data;
 	})
@@ -24,6 +24,7 @@ myApp.controller('storyController', ['$scope', '$location', '$cookies', 'Snippet
 
     SnippetFactory.createSnippet($scope.snippet, function(data){
   		$scope.snippet = {};
+  		console.log("here are", data);
   		$scope.snippets = data;
   	})
 

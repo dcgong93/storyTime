@@ -12,6 +12,18 @@ module.exports = (function() {
         }
       })
     },
+
+    getStoriesOfUser: function(req, res){
+      console.log('=====>',req.params.id);
+      storiesDb.find({_user: req.params.id}, function(err, stories){
+        if(err){
+          console.log('get stories server error', err);
+        } else {
+          res.json(stories);
+        }
+      })
+    },
+
     getStory: function(req, res){
       console.log('this is req.params.id',req.params.id)
       storiesDb.findOne({_id:req.params.id})

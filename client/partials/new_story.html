@@ -11,7 +11,7 @@
   </div>
   <ul class="nav navbar-nav navbar-right links">
     <li><a href="#/dashboard">Dashboard</a></li>
-  <li role="presentation"><a href="#">Story</a></li>
+  <li role="presentation"><a href="#/new_story">Story</a></li>
     <li class="dropdown">
       <a href="" class="dropdown-toggle" data-toggle="dropdown" role="" aria-haspopup="true" aria-expanded="false">{{userObj.fname}} {{userObj.lname}} <span class="caret"></span></a>
       <ul class="dropdown-menu drop">
@@ -42,7 +42,7 @@
             </div>
             <div class="form-group"> 
               <label for="exampleTextarea" class="control-label col-sm-1">Story: </label>
-              <div class="col-sm-10">
+              <div class="form-group">
                 <textarea class="form-control " id="exampleTextarea" rows="10" placeholder="Unleash your imagination..." ng-model="story.content"></textarea>
               </div>
             </div>
