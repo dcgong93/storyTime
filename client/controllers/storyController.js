@@ -20,7 +20,7 @@ myApp.controller('storyController', ['$scope', '$location', '$cookies', 'Snippet
 		console.log('printing cookies id', $cookies.getObject('_id'));
 		$scope.snippet._stories = $routeParams.id;
 		console.log('printing params id',$routeParams.id);
-    SnippetFactory.createSnippet($scope.snippet, function(data){
+    	SnippetFactory.createSnippet($scope.snippet, function(data){
   		$scope.snippet = data;
   	})
   }

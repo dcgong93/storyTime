@@ -30,7 +30,7 @@ var myApp = angular.module('Myapp', ['ngRoute', 'ngCookies']);
 				authenticated: true
 			})
 
-			.when('/profile', {
+			.when('/profile/:id', {
 				controller: 'userController',
 				templateUrl: 'partials/profile.html',
 				authenticated: true

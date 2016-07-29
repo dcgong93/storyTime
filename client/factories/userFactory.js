@@ -1,4 +1,4 @@
-myApp.factory('dummyFactory', function($http){
+myApp.factory('userFactory', function($http,$cookies){
 
 	// This is my dummyFactory. I usually add this into any project that 
 	// I do. Just so that I can use it for reference as I add new Factories
@@ -9,30 +9,32 @@ myApp.factory('dummyFactory', function($http){
 	var users = []
 
 	var factory = {}
+	factory.getUser = function(id, callback) {
+		console.log('made it to userFactory', id);
+		$http.get('/currentUser/'+ id).then(function(data) {
+			callback(data.data);
+		})
+	}
 
-	factory.addImage = function(callback){
-		$http.post('/user_image').then(function(data){
-			users = data.data;
+	factory.updateUser = function(updateUser,id,callback){
+		console.log(updateUser);
+		console.log(id);
+		updateUser.id = id;
+		$http.post('/users/'+ id +'/update', updateUser).then(function(data){
+			console.log('made it back from backend this one user', data.data);
+			// $cookies.putObject('auth', data.data);
+			// console.log($cookies);
 			callback(data.data);
 		});
 	}
 
-	// the info parameter below is the the dummy that we're trying to add into our database
+	factory.getStory = function(id , callback) {
+		console.log("This is userFactory", id);
+		$http.get()
 
-	// I added a test for myself below. I'm passing both a body element as well a params element
-	// I use this as an initial test that I can pass information to my backend.
-	// Check out your server console and you should see the body and the value we pass through 
-	// the url. 
-	// factory.addDummy = function(info, callback){
-	// 	$http.post('/dummies/youShouldSeeThisInServerConsoleReqParams', info).then(function(data){
-	// 		if(data.error){
-	// 			callback(data);
-	// 		} else {
-	// 			mongooses.push(data)
-	// 			callback(mongooses);
-	// 		}
-	// 	})
-	// }
+	}
+
+
 
 	return factory;
 })
