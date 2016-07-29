@@ -1,4 +1,3 @@
-<!-- NAVBAR -->
 <nav class="navbar foncee">
 <div class="container-fluid">
   <div class="navbar-header">
@@ -9,59 +8,57 @@
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="#/">StoryHub</a>
-    <ul class="nav navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#/dashboard">Dashboard <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#/new_story">Stories</a>
-      </li>
-  </ul>
   </div>
-  <ul class="nav navbar-nav navbar-right">
+  <ul class="nav navbar-nav navbar-right links">
+    <li><a href="#/dashboard">Dashboard</a></li>
+  <li role="presentation"><a href="#">Story</a></li>
     <li class="dropdown">
-      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nazim <span class="caret"></span></a>
-      <ul class="dropdown-menu">
-        <li><a href="#">Profile</a></li>
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="" aria-haspopup="true" aria-expanded="false">{{userObj.fname}} {{userObj.lname}} <span class="caret"></span></a>
+      <ul class="dropdown-menu drop">
+        <li><a href="#/profile/{{userObj._id}}">Profile</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="" ng-click="deleteUser()">Logout</a></li>
       </ul>
     </li>
   </ul>
 </div><!--/.container-fluid -->
 </nav>
+<!-- END NAV -->
 
 <div class="container">
-<!--   <form ng-submit="createStory()">
-    Title:<br>
-    <input type="text" ng-model="story.title"><br>
-    Topic:<br>
-    <input type="text" ng-model="story.genre"><br>
-    <input type="submit" value="Submit">
-  </form> -->
-<form class="form-horizontal" role="form" ng-submit="createStory()">
-  <div class="form-group">
-    <label class="control-label col-sm-1" for="title">Title:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="title" placeholder="Enter Title" ng-model="story.title">
+  <div class = "row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class = "row">
+        <div class = ".col-sm-12 story_form">
+          <h2>Create a New Story</h2>
+          <form ng-submit = "createStory()">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" placeholder="New Title" ng-model = "story.title">
+            </div>
+            <div class="form-group">
+              <label for="genre">Genre</label>
+              <input type="text" class="form-control" id="genre" placeholder="Genre" ng-model = "story.genre">
+            </div>
+            <div class="form-group"> 
+              <label for="exampleTextarea" class="control-label col-sm-1">Story: </label>
+              <div class="col-sm-10">
+                <textarea class="form-control " id="exampleTextarea" rows="10" placeholder="Unleash your imagination..." ng-model="story.content"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success pull-right">Create Story</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="form-group">
-    <label class="control-label col-sm-1" for="topic">Topic:</label>
-    <div class="col-sm-10"> 
-      <input type="text" class="form-control" id="topic" placeholder="Enter topic" ng-model="story.genre">
-    </div>
-  </div>
-  <div class="form-group"> 
-    <label for="exampleTextarea" class="control-label col-sm-1">Story: </label>
-    <div class="col-sm-10">
-      <textarea class="form-control " id="exampleTextarea" rows="10" placeholder="Unleash your imagination..." ng-model="story.content"></textarea>
-    </div>
-  </div>
-  <div class="form-group"> 
-    <div class="col-sm-offset-10 col-sm-2">
-      <button type="submit" class="btn btn-default">Submit</button>
-    </div>
-  </div>
-</form>
 </div>
+
+
+
+
+
+
+
+
+

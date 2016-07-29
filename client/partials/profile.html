@@ -18,11 +18,13 @@
       </li>
   </ul>
   </div>
-  <ul class="nav navbar-nav navbar-right">
+  <ul class="nav navbar-nav navbar-right links">
+  	<li><a href="#/dashboard">Dashboard</a></li>
+	<li role="presentation"><a href="#">Story</a></li>
     <li class="dropdown">
-      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userObj.fname}} <span class="caret"></span></a>
-      <ul class="dropdown-menu">
-        <li><a href="#/profile">Profile</a></li>
+      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="" aria-haspopup="true" aria-expanded="false">{{User.fname}} {{User.lname}} <span class="caret"></span></a>
+      <ul class="dropdown-menu drop">
+        <li><a href="#/profile/{{User._id}}">Profile</a></li>
         <li role="separator" class="divider"></li>
         <li><a href="" ng-click="deleteUser()">Logout</a></li>
       </ul>
@@ -40,49 +42,43 @@
 			<div>
 				<img src="http://9to5narrative.com/wp-content/uploads/2014/01/Business-Storytelling.jpg" alt="profile picture" class="img-circle" id = "userProfile">
 			</div>
-
+			<h4 class = "profile_name">{{User.fname}} {{User.lname}}</h4>
 			<div id = "userBio">
-				<p>About Me: {{userObj.fname}} {{userObj.lname}}</p>
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+				<p>About Me:</p>
+				<p>{{User.bio}}</p>	
 			</div>
 			
-			<a data-toggle="modal" data-target=".bs-example-modal-lg">Update Profile</a>
+			<a href = "" data-toggle="modal" data-target=".bs-example-modal-lg" class = "modal_link">Update Profile</a>
 
-			<!-- Image uploads -->
-<!-- 			<div ng-controller="AppController">
-		        <input type="file" nv-file-select uploader="uploader"/><br/>
-		        <ul>
-		            <li ng-repeat="item in uploader.queue">
-		                Name: <span ng-bind="item.file.name"></span><br/>
-		                <button ng-click="item.upload()">upload</button>
-		            </li>
-		        </ul>
-		    </div> -->
-
-		    <!-- End of image upload -->
 
 			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 			  <div class="modal-dialog modal-lg" role="document">
 			    <div class="modal-content updateProfile">
 			       <h2>Update your Profile</h2>
 			       <form>
-			       		
 			       		<div class="form-group">
-						    <label for="name">Name</label>
-						    <input type="text" class="form-control" id="name" placeholder="Name">
+						    <label for="fname">Name</label>
+						    <input type="text" class="form-control" id="fname" placeholder="{{User.fname}}" ng-model = "editUser.fname">
+						</div>
+
+						<div class="form-group">
+						    <label for="lname">Last Name</label>
+						    <input type="text" class="form-control" id="lname" placeholder="{{User.lname}}" ng-model = "editUser.lname">
 						</div>
 
 						<div class="form-group">
 						    <label for="exampleInputEmail1">Email address</label>
-						    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+						    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="{{User.email}}" ng-model = "editUser.email">
 						</div>
 
 						<div class="form-group">
-						    <label for="username">Username</label>
-						    <input type="text" class="form-control" id="username" placeholder="Username">
+							<label for="bio">About Me</label>
+							<textarea class="form-control" rows="3" id ="bio" placeholder = "{{User.bio}}" ng-model = "editUser.bio">
+							</textarea>
 						</div>
 
-						<button type="submit" class="btn btn-success">update</button>
+
+						<button type="submit" class="btn btn-success pull-right" ng-click = "updateUser()">update</button>
 			       </form>
 			    </div>
 			  </div>
@@ -111,8 +107,7 @@
 			    </div>
 			</div>
 		</div>
-	</div>	
-			
+	</div>				
 </div>
 
 

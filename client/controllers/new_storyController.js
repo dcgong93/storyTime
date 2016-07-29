@@ -1,13 +1,10 @@
 myApp.controller('new_storyController', ['$scope','$cookies','$location', 'StoryFactory', function($scope, $cookies,$location, StoryFactory){
-	// Here is where we are creating indexController.
-	// You have to make sure that our index controller matches the name
-	// that we pass in, in our router.
-	// So far the only variable that I'm injecting into this controller
-	// is $scope.
+	
 
 	console.log('I am able to load my new_storyController along with my new_story partial');
-
-  $scope.createStory = function(){
+	$scope.userObj = $cookies.getObject('auth');
+  	
+  	$scope.createStory = function(){
     console.log('client side new story controller');
     $scope.story._user = $cookies.getObject('auth')._id;
     StoryFactory.addStory($scope.story, function(data){
